@@ -1,0 +1,39 @@
+﻿{
+  "WebApi": {
+    "urls": "http://*:5000/",
+    "cors": {
+      "allowedOrigins": [ "http://localhost:5888", "http://127.0.0.1:5888" ],
+      "allowedHeaders": [ "*" ],
+      "allowedMethods": [ "*" ],
+      "allowCredentials": false
+    }
+  },
+  "extraConfigs": {
+    "environment": "environment-specific-config.json"
+  },
+  "logging": {
+    "Console": {
+      "logLevel": {
+        "Microsoft.EntityFrameworkCore.Database.Connection": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Command": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Transaction": "Warning",
+        "Microsoft.EntityFrameworkCore.ChangeTracking": "Warning"
+      }
+    },
+    "Debug": {
+      "logLevel": {
+        "Microsoft.EntityFrameworkCore.Database.Connection": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Command": "Information",
+        "Microsoft.EntityFrameworkCore.Database.Transaction": "Warning",
+        "Microsoft.EntityFrameworkCore.ChangeTracking": "Warning"
+      }
+    },
+    "JsonFile": {
+      "logLevel": {
+        "Microsoft.EntityFrameworkCore.Database.Connection": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Command": "Information",
+        "Microsoft.EntityFrameworkCore.Database.Transaction": "Warning",
+        "Microsoft.EntityFrameworkCore.ChangeTracking": "Warning"
+      }
+    }
+  }

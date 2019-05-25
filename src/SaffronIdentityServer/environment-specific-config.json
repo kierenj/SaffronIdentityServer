@@ -1,0 +1,8 @@
+﻿{
+  "environmenttype": "local",
+  "entityFramework": {
+    "coreContext": {
+      "connectionString": "Data Source=localhost;Initial Catalog=SaffronIdentityServerDemo;Integrated Security=True"
+    }
+  }
+}
