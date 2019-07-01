@@ -29,6 +29,7 @@ namespace SaffronIdentityServer
                     .UseSaffronConfig()
                 )
                 .SupportAspNetCore()
+                .SupportEfCommandLineTool()
                 .UseRoles<FromCommandLine>()
                 .Build();
 
@@ -40,7 +41,7 @@ namespace SaffronIdentityServer
             app.UseName("IdentityServer", "IDSR")
                 .UseAutofac()
                 .UseSwagger()
-                .UseEntityFramework<CoreContext>((options, connStr) => options.UseSqlServer(connStr))
+                // .UseEntityFramework<CoreContext>((options, connStr) => options.UseSqlServer(connStr))
                 .UseWebApiModule<IdentityServerModule>()
                 .UseIdentityStores();
         }

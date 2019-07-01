@@ -1,19 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RedRiver.Saffron.EntityFramework;
 using RedRiver.Saffron.EntityFramework.AuthStore.Entities;
 using SaffronIdentityServer.Database.Models;
+using SaffronIdentityServer.Saffron;
+using SaffronIdentityServer.Saffron.EntityFramework;
 using Role = SaffronIdentityServer.Database.Models.Role;
 
 namespace SaffronIdentityServer.Database
 {
-    public class CoreContext : SaffronDbContext
+    public class CoreContext : SaffronIdentityDbContext<CoreContext>
     {
-        public CoreContext(DbContextOptions options) : base(options)
+        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
         {
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        // public DbSet<User> Users { get; set; }
+        // public DbSet<Role> Roles { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
 
     }

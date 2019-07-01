@@ -10,6 +10,7 @@ using SaffronIdentityServer.Database.Models;
 
 namespace SaffronIdentityServer.Auth
 {
+    /*
     public class AppRoleStore : IRoleStore<Role>
     {
         private readonly CoreContext _ctx;
@@ -93,4 +94,5 @@ namespace SaffronIdentityServer.Auth
             return await _ctx.Roles.SingleOrDefaultAsync(x => x.Name.ToUpper() == normalizedRoleName);
         }
     }
+    */
 }

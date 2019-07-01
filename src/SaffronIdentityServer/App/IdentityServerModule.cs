@@ -2,6 +2,7 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
@@ -27,8 +28,8 @@ namespace SaffronIdentityServer.App
 
             // TODO: AutoFac registration error => 
             services.AddIdentity<User, Role>()
-                .AddUserStore<AppUserStore>()
-                .AddRoleStore<AppRoleStore>()
+                .AddUserStore<UserStore<User>>()
+                .AddRoleStore<RoleStore<Role>>()
                 .AddUserManager<UserManager<User>>()
                 .AddRoleManager<RoleManager<Role>>();
 

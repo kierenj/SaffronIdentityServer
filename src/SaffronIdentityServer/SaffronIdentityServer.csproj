@@ -20,4 +20,17 @@
     <PackageReference Include="RedRiver.Saffron.EntityFramework.Tooling" Version="2.0.1-alpha1-*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="environment-specific-config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="saffron-config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\Migrations\" />
+  </ItemGroup>
+
 </Project>

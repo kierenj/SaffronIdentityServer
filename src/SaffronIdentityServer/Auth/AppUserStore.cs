@@ -10,6 +10,7 @@ using SaffronIdentityServer.Database.Models;
 
 namespace SaffronIdentityServer.Auth
 {
+    /*
     public class AppUserStore : IUserStore<User>
     {
         private readonly CoreContext _ctx;
@@ -89,4 +90,5 @@ namespace SaffronIdentityServer.Auth
             return await _ctx.Users.FirstOrDefaultAsync(x => !x.DeletedUtc.HasValue && x.NormalizedUserName == normalizedUserName);
         }
     }
+    */
 }
