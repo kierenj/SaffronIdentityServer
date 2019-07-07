@@ -13,10 +13,10 @@ namespace SaffronIdentityServer.Saffron.EntityFramework
 {
     public static class AppBuilderExtensions
     {
-        public static IAppBuilder UseEntityFramework<TContext>(
+        public static IAppBuilder UseEntityFrameworkIdentityServer<TContext>(
             this IAppBuilder builder,
             Action<DbContextOptionsBuilder, string> providerAction
-        ) where TContext : SaffronIdentityDbContext<TContext>
+        ) where TContext : SaffronIdentityDbContext
         {
             builder.UseDefaultConfiguration(new Dictionary<string, string>
             {
@@ -52,20 +52,20 @@ namespace SaffronIdentityServer.Saffron.EntityFramework
             return builder;
         }
 
-        private static async Task<bool> ReadyCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext<TContext>
+        private static async Task<bool> ReadyCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext
         {
             if (!await NoMigsCheck(ctx, cancel)) return false;
             return await WarmedUpCheck(ctx, cancel);
         }
 
-        private static async Task<bool> NoMigsCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext<TContext>
+        private static async Task<bool> NoMigsCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext
         {
             var pendingMigs = await ctx.Database.GetPendingMigrationsAsync(cancel);
             var noMigs = !pendingMigs.Any();
             return noMigs;
         }
 
-        private static Task<bool> WarmedUpCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext<TContext>
+        private static Task<bool> WarmedUpCheck<TContext>(TContext ctx, CancellationToken cancel) where TContext : SaffronIdentityDbContext
         {
             // ref: https://github.com/aspnet/EntityFrameworkCore/issues/15568
             _ = ctx.Model;

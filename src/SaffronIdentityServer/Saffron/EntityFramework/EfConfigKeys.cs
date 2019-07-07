@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SaffronIdentityServer.Saffron.EntityFramework
 {
-    internal static class EfConfigKeys
+    public static class EfConfigKeys
     {
         public static readonly string ConfigSectionName = "EntityFramework";
         public static readonly string ConnectionStringKeyName = "ConnectionString";

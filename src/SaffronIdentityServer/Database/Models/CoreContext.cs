@@ -7,11 +7,11 @@ using SaffronIdentityServer.Saffron;
 using SaffronIdentityServer.Saffron.EntityFramework;
 using Role = SaffronIdentityServer.Database.Models.Role;
 
-namespace SaffronIdentityServer.Database
+namespace SaffronIdentityServer.Database.Models
 {
-    public class CoreContext : SaffronIdentityDbContext<CoreContext>
+    public class CoreContext : SaffronIdentityDbContext
     {
-        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
+        public CoreContext(DbContextOptions<SaffronIdentityDbContext> options) : base(options)
         {
         }
 

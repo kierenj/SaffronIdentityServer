@@ -13,6 +13,8 @@ using RedRiver.Saffron.AspNetCore;
 using RedRiver.SaffronCore;
 using SaffronIdentityServer.App;
 using SaffronIdentityServer.Database;
+using SaffronIdentityServer.Database.Models;
+using SaffronIdentityServer.Saffron.EntityFramework;
 
 namespace SaffronIdentityServer
 {
@@ -29,7 +31,7 @@ namespace SaffronIdentityServer
                     .UseSaffronConfig()
                 )
                 .SupportAspNetCore()
-                .SupportEfCommandLineTool()
+                .SupportEfIsCommandLineTool()
                 .UseRoles<FromCommandLine>()
                 .Build();
 
@@ -41,7 +43,7 @@ namespace SaffronIdentityServer
             app.UseName("IdentityServer", "IDSR")
                 .UseAutofac()
                 .UseSwagger()
-                // .UseEntityFramework<CoreContext>((options, connStr) => options.UseSqlServer(connStr))
+                .UseEntityFrameworkIdentityServer<CoreContext>((options, connStr) => options.UseSqlServer(connStr))
                 .UseWebApiModule<IdentityServerModule>()
                 .UseIdentityStores();
         }

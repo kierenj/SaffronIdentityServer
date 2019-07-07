@@ -9,9 +9,9 @@ using SaffronIdentityServer.Database;
 
 namespace SaffronIdentityServer.Saffron.EntityFramework
 {
-    public abstract class SaffronIdentityDbContext<T> : IdentityDbContext where T : IdentityDbContext
+    public abstract class SaffronIdentityDbContext : IdentityDbContext //<T> : IdentityDbContext where T : IdentityDbContext
     {
-        protected SaffronIdentityDbContext(DbContextOptions<T> options) : base(options)
+        protected SaffronIdentityDbContext(DbContextOptions<SaffronIdentityDbContext> options) : base(options)
         {
         }
 
