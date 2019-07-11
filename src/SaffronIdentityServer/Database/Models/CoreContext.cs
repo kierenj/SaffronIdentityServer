@@ -11,7 +11,7 @@ namespace SaffronIdentityServer.Database.Models
 {
     public class CoreContext : SaffronIdentityDbContext
     {
-        public CoreContext(DbContextOptions<SaffronIdentityDbContext> options) : base(options)
+        public CoreContext(DbContextOptions<CoreContext> options) : base(options)
         {
         }
 

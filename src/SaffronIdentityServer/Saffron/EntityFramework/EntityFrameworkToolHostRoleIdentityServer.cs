@@ -317,7 +317,7 @@ namespace RedRiver.Saffron.EntityFramework.Tooling
         {
             var target = Configuration["target"];
 
-            using (var db = (SaffronDbContext)App.CompositionRoot.Resolve(contextType))
+            using (var db = (SaffronIdentityDbContext)App.CompositionRoot.Resolve(contextType))
             {
                 var migrator = db.GetService<IMigrator>();
 
